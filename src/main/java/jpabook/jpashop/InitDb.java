@@ -10,7 +10,7 @@ import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 
 /**
- *
+ * DB 데이터 초기화를 위한 Component
  */
 @Component
 @RequiredArgsConstructor
