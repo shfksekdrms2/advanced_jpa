@@ -103,4 +103,16 @@ public class OrderRepository {
                         " join fetch o.delivery d", Order.class)
                 .getResultList();
     }
+
+    public List<Order> findAllWithItem() {
+        // db distinct + 1 가지 더 제공
+        // jpa 에서 동일 root entity(Order) 의 key 를 가지고 있으면 제거함.
+        return em.createQuery(
+                "select distinct o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d" +
+                        " join fetch o.orderItems oi" +
+                        " join fetch oi.item i", Order.class)
+                .getResultList();
+    }
 }
