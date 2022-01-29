@@ -87,11 +87,21 @@ public class OrderApiController {
         return orderQueryRepository.findOrderQueryDtos();
     }
 
+    /**
+     * 두번 조회하기
+     *
+     * @Author: jsj0828
+     **/
     @GetMapping("/v5/orders")
     public List<OrderQueryDto> ordersV5() {
         return orderQueryRepository.findAllByDto_optimization();
     }
 
+    /**
+     * 한번에 조회하기
+     *
+     * @Author: jsj0828
+     **/
     @GetMapping("/v6/orders")
     public List<OrderFlatDto> ordersV6() {
         return orderQueryRepository.findAllByDto_flat();
