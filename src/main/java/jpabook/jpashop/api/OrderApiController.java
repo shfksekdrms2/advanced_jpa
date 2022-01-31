@@ -82,6 +82,11 @@ public class OrderApiController {
         return result;
     }
 
+    /**
+     * n 번 조회 하기
+     *
+     * @Author: jsj0828
+     **/
     @GetMapping("/v4/orders")
     public List<OrderQueryDto> ordersV4() {
         return orderQueryRepository.findOrderQueryDtos();
