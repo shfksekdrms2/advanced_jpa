@@ -70,6 +70,11 @@ public class OrderApiController {
         return result;
     }
 
+    /**
+     * 페이징의 한계
+     *
+     * @author : jsj0828
+     **/
     @GetMapping("/v3.1/orders")
     public List<OrderDto> ordersV3_page(@RequestParam(value = "offset", defaultValue = "0") int offset,
                                         @RequestParam(value = "limit", defaultValue = "100") int limit) {
